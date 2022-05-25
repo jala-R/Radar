@@ -1,6 +1,9 @@
 const express=require("express"),
     app=express();
 
+//configs
+app.use(express.static("./static/"))
+
 app.get("/",(req,res)=>{
     res.send("dsdscsd");
 })
