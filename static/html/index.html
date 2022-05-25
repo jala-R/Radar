@@ -1,0 +1,37 @@
+<html>
+
+  <head>
+    <script src='https://js.zohostatic.com/maps/v8_7_0/js/zmaps-sdk-min.js'></script>
+    <link rel='stylesheet' type='text/css'
+      href='https://css.zohostatic.com/maps/v8_7_0/styles/zmaps-sdk-min.css' />
+    <style>
+      #MapdivId {
+        height: 100%;
+        width: 100%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id='MapdivId'></div>
+    <script>
+      var apiKey = 'ZMapsExamplesWeb-73f269cc3db5c26abb9a6b58b33e7452';
+      var zMapsSdk = new ZMapsSDK();
+      zMapsSdk.setApiKey(apiKey);
+
+      zMapsSdk.init(initCallback);
+
+      function initCallback()
+      {
+
+        var map = new ZMap('MapdivId', zMapsSdk);
+
+        map.loadMap();
+
+      }
+
+    </script>
+  </body>
+
+</html>
