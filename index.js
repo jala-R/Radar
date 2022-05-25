@@ -2,12 +2,21 @@ const express=require("express"),
     app=express(),
     axios=require("axios");
 
-//configs
+
+//middleware
+app.use((req,res,next)=>{
+    res.setHeader("Access-Control-Allow-Origin",req.headers.origin);
+    next();
+})
 app.use(express.static("./static/"))
+
+
 
 app.get("/",(req,res)=>{
     res.send("dsdscsd");
 })
+
+
 
 //convert eng search to lat log
 app.get("/getLatLog",async (req,res)=>{
